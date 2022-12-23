@@ -1,8 +1,10 @@
+import torch
+
 from bricks import *
 
 
 class UNet30(nn.Module):
-    def __init__(self, n_channels, n_classes, bi_linear=False):
+    def __init__(self, n_channels:int, n_classes:int, bi_linear=False):
         super(UNet30, self).__init__()
         self.n_channels = n_channels
         self.n_classes = n_classes
@@ -19,7 +21,7 @@ class UNet30(nn.Module):
         self.up4 = Up(256, 128, bi_linear, k=(2,2))
         self.outc = OutConv(128, n_classes, (4,2), nodes=37)
 
-    def forward(self, x):
+    def forward(self, x:torch.Tensor)-> torch.tensor:
         x1 = self.inc(x)
         x2 = self.down1(x1)
         x3 = self.down2(x2)
