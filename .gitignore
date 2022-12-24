@@ -1,0 +1,15 @@
+
+# virtualenv
+
+model_deployment_fastapi/env/
+model_deployment_fastapi/logs/
+
+# Spyder project settings
+.spyderproject
+.spyproject
+
+# Rope project settings
+.ropeproject
+
+# checkpoints
+/model_deployment_fastapi/checkpoints/
