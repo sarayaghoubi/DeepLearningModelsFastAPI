@@ -27,7 +27,7 @@ class predictor(object):
         x = torch.unsqueeze(torch.from_numpy(features), dim=0)
         return torch.unsqueeze(x, dim=0)
 
-    def _postprocessing(self, outputs):
+    def _post_processing(self, outputs)->(float,float):
         [u, d] = outputs
         return Output(u.item(), d.item())
 
@@ -36,4 +36,4 @@ class predictor(object):
         x = x.to(device=self.device, dtype=torch.float32)
         u, d = self.nets['u'](x), self.nets['d'](x)
         logger.info(f"model predicted: {[u, d]}")
-        return self._postprocessing([u, d])
+        return self._post_processing([u, d])
