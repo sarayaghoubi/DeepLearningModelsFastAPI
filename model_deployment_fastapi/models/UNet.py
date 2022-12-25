@@ -1,6 +1,6 @@
 import torch
 
-from bricks import *
+from model_deployment_fastapi.models.bricks import *
 
 
 class UNet30(nn.Module):

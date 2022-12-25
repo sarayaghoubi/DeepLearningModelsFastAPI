@@ -3,7 +3,7 @@ import torch
 from loguru import logger
 from model_deployment_fastapi.models import UNet
 from model_deployment_fastapi.models.ExchangeDtType import InputDT, Output
-
+import numpy as np
 
 class predictor(object):
     def __init__(self, path):
@@ -24,6 +24,7 @@ class predictor(object):
 
     def _preprocess(self, features: InputDT) -> torch.Tensor:
         logger.debug("Pre-processing features.")
+
         x = torch.unsqueeze(torch.from_numpy(features), dim=0)
         return torch.unsqueeze(x, dim=0)
 

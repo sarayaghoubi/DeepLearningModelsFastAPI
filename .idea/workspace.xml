@@ -1,15 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5ac3fc08-dc74-4b3a-b797-3121d33cae51" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/model_deployment_fastapi/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/model_deployment_fastapi/api/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/model_deployment_fastapi/api/routes/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/model_deployment_fastapi/core/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/model_deployment_fastapi/models/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/model_deployment_fastapi/services/__init__.py" afterDir="false" />
+    <list default="true" id="5ac3fc08-dc74-4b3a-b797-3121d33cae51" name="Changes" comment="creating the router files for the api">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/model_deployment_fastapi/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model_deployment_fastapi/core/event_handlers.py" beforeDir="false" afterPath="$PROJECT_DIR$/model_deployment_fastapi/core/event_handlers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model_deployment_fastapi/core/security.py" beforeDir="false" afterPath="$PROJECT_DIR$/model_deployment_fastapi/core/security.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model_deployment_fastapi/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/model_deployment_fastapi/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model_deployment_fastapi/models/ExchangeDtType.py" beforeDir="false" afterPath="$PROJECT_DIR$/model_deployment_fastapi/models/ExchangeDtType.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model_deployment_fastapi/models/UNet.py" beforeDir="false" afterPath="$PROJECT_DIR$/model_deployment_fastapi/models/UNet.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model_deployment_fastapi/models/input_dt.py" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,6 +30,7 @@
       </GitPushTagMode>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -46,10 +46,21 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\ASUS Laptop\PycharmProjects\DeepLearningModelsFastAPI\model_deployment_fastapi\api\routes" />
+      <recent name="C:\Users\ASUS Laptop\PycharmProjects\DeepLearningModelsFastAPI\model_deployment_fastapi\core" />
+      <recent name="C:\Users\ASUS Laptop\PycharmProjects\DeepLearningModelsFastAPI" />
+      <recent name="C:\Users\ASUS Laptop\PycharmProjects\DeepLearningModelsFastAPI\venv" />
+      <recent name="C:\Users\ASUS Laptop\PycharmProjects\DeepLearningModelsFastAPI\model_deployment_fastapi\models" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\ASUS Laptop\PycharmProjects\DeepLearningModelsFastAPI\model_deployment_fastapi\core" />
       <recent name="C:\Users\ASUS Laptop\PycharmProjects\DeepLearningModelsFastAPI\model_deployment_fastapi" />
+      <recent name="C:\Users\ASUS Laptop\PycharmProjects\DeepLearningModelsFastAPI\env" />
+      <recent name="C:\Users\ASUS Laptop\PycharmProjects\DeepLearningModelsFastAPI\model_deployment_fastapi\services" />
     </key>
   </component>
   <component name="RunManager">
@@ -65,7 +76,17 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="C:\Users\ASUS Laptop\PycharmProjects\DeepLearningModelsFastAPI\model_deployment_fastapi\main.py" />
+      <EXTENSION ID="net.ashald.envfile">
+        <option name="IS_ENABLED" value="true" />
+        <option name="IS_SUBST" value="false" />
+        <option name="IS_PATH_MACRO_SUPPORTED" value="false" />
+        <option name="IS_IGNORE_MISSING_FILES" value="false" />
+        <option name="IS_ENABLE_EXPERIMENTAL_INTEGRATIONS" value="false" />
+        <ENTRIES>
+          <ENTRY IS_ENABLED="true" PARSER="runconfig" IS_EXECUTABLE="false" />
+        </ENTRIES>
+      </EXTENSION>
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/model_deployment_fastapi/main.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -74,6 +95,45 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="DeepLearningModelsFastAPI" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+        <env name="API_KEY" value="SIWKMFHEJFMER836rtgwevjfhng64grfjhevDHNRJFhv61dvwsucverjhc" />
+        <env name="IS_DEBUG" value="False" />
+        <env name="DEFAULT_MODEL_PATH" value="model_deployment_fastapi/checkpoints" />
+      </envs>
+      <option name="SDK_HOME" value="C:\Users\ASUS Laptop\anaconda3\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/model_deployment_fastapi" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="net.ashald.envfile">
+        <option name="IS_ENABLED" value="false" />
+        <option name="IS_SUBST" value="false" />
+        <option name="IS_PATH_MACRO_SUPPORTED" value="false" />
+        <option name="IS_IGNORE_MISSING_FILES" value="false" />
+        <option name="IS_ENABLE_EXPERIMENTAL_INTEGRATIONS" value="false" />
+        <ENTRIES>
+          <ENTRY IS_ENABLED="true" PARSER="runconfig" IS_EXECUTABLE="false" />
+        </ENTRIES>
+      </EXTENSION>
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/model_deployment_fastapi/main.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.main" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -84,11 +144,121 @@
       <option name="presentableId" value="Default" />
       <updated>1671788087393</updated>
     </task>
+    <task id="LOCAL-00001" summary="add initial files">
+      <created>1671792812005</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1671792812005</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Made some correction to the names, lines, ....[pretty]">
+      <created>1671793012541</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1671793012541</updated>
+    </task>
+    <task id="LOCAL-00003" summary="pydantic input type for the model was defined">
+      <created>1671804276143</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1671804276143</updated>
+    </task>
+    <task id="LOCAL-00004" summary="fixed some name and space issues, pretty stuff .... :))">
+      <created>1671804352508</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1671804352508</updated>
+    </task>
+    <task id="LOCAL-00005" summary="define the in/out data in connection with model">
+      <created>1671813045758</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1671813045758</updated>
+    </task>
+    <task id="LOCAL-00006" summary="implemented the predict function to gather and predict">
+      <created>1671813132774</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1671813132774</updated>
+    </task>
+    <task id="LOCAL-00007" summary="edited input and output type for functions">
+      <created>1671813172814</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1671813172814</updated>
+    </task>
+    <task id="LOCAL-00008" summary="created the config file">
+      <created>1671814616762</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1671814616762</updated>
+    </task>
+    <task id="LOCAL-00009" summary="created the possible messages">
+      <created>1671814701181</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1671814701181</updated>
+    </task>
+    <task id="LOCAL-00010" summary="rearranged the api-key using scarlette security">
+      <created>1671869215202</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1671869215202</updated>
+    </task>
+    <task id="LOCAL-00011" summary="add git ignore files">
+      <created>1671869578888</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1671869578890</updated>
+    </task>
+    <task id="LOCAL-00012" summary="creating the router files for the api">
+      <created>1671871414797</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1671871414797</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
+        <entry key="185c6c9a-ec1f-45de-9247-c66c4069d09e">
+          <value>
+            <State>
+              <option name="SHOW_ONLY_AFFECTED_CHANGES" value="true" />
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="HEAD" />
+                      </list>
+                    </value>
+                  </entry>
+                  <entry key="structure">
+                    <value>
+                      <list>
+                        <option value="dir:C:/Users/ASUS Laptop/PycharmProjects/DeepLearningModelsFastAPI/model_deployment_fastapi" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
         <entry key="MAIN">
           <value>
             <State>
@@ -108,6 +278,26 @@
         </entry>
       </map>
     </option>
+    <option name="OPEN_GENERIC_TABS">
+      <map>
+        <entry key="185c6c9a-ec1f-45de-9247-c66c4069d09e" value="TOOL_WINDOW" />
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="add initial files" />
+    <MESSAGE value="Made some correction to the names, lines, ....[pretty]" />
+    <MESSAGE value="pydantic input type for the model was defined" />
+    <MESSAGE value="fixed some name and space issues, pretty stuff .... :))" />
+    <MESSAGE value="define the in/out data in connection with model" />
+    <MESSAGE value="implemented the predict function to gather and predict" />
+    <MESSAGE value="edited input and output type for functions" />
+    <MESSAGE value="created the config file" />
+    <MESSAGE value="created the possible messages" />
+    <MESSAGE value="rearranged the api-key using scarlette security" />
+    <MESSAGE value="add git ignore files" />
+    <MESSAGE value="creating the router files for the api" />
+    <option name="LAST_COMMIT_MESSAGE" value="creating the router files for the api" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -116,6 +306,20 @@
           <url>file://$PROJECT_DIR$/model_deployment_fastapi/main.py</url>
           <line>8</line>
           <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/model_deployment_fastapi/models/bricks.py</url>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/model_deployment_fastapi/core/config.py</url>
+          <line>9</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/model_deployment_fastapi/core/config.py</url>
+          <line>7</line>
+          <option name="timeStamp" value="4" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
