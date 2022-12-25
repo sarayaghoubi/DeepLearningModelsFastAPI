@@ -3,8 +3,8 @@ from typing import Optional
 from fastapi import HTTPException, Security
 from fastapi.security.api_key import APIKeyHeader
 from starlette.status import HTTP_400_BAD_REQUEST, HTTP_401_UNAUTHORIZED
-import config
-from message import AUTH_REQ, NO_API_KEY
+from model_deployment_fastapi.core import config
+from model_deployment_fastapi.core.message import AUTH_REQ, NO_API_KEY
 
 api_key = APIKeyHeader(name="token", auto_error=False)
 

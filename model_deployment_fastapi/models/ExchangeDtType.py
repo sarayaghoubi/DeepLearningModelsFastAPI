@@ -1,9 +1,10 @@
 from pydantic import BaseModel
-import numpy as np
+from numpy import ndarray
+from typing import Optional,List
 
 
 class InputDT(BaseModel):
-    features: np.ndarray
+    features: List[float]
 
 
 class Output(BaseModel):
