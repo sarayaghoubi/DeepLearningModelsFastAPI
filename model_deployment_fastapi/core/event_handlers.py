@@ -1,8 +1,8 @@
 from typing import Callable
 from fastapi import FastAPI
 from loguru import logger
-from model_deployment_fastapi.core.config import DEFAULT_MODEL_PATH
-from model_deployment_fastapi.services.predictor import predictor
+from DeepLearningModelsFastAPI.model_deployment_fastapi.core.config import DEFAULT_MODEL_PATH
+from DeepLearningModelsFastAPI.model_deployment_fastapi.services.predictor import predictor
 
 
 def _startup_model(app: FastAPI) -> None:

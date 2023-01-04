@@ -1,7 +1,7 @@
 
 from fastapi import APIRouter
 
-from model_deployment_fastapi.models.ExchangeDtType import InputDT
+from DeepLearningModelsFastAPI.model_deployment_fastapi.models.ExchangeDtType import InputDT
 
 router = APIRouter()
 

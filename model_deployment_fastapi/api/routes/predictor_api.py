@@ -1,9 +1,9 @@
 from fastapi import APIRouter, Depends
 from starlette.requests import Request
 
-from model_deployment_fastapi.core import security
-from model_deployment_fastapi.models.ExchangeDtType import InputDT, Output
-from model_deployment_fastapi.services.predictor import predictor
+from DeepLearningModelsFastAPI.model_deployment_fastapi.core import security
+from DeepLearningModelsFastAPI.model_deployment_fastapi.models.ExchangeDtType import InputDT, Output
+from DeepLearningModelsFastAPI.model_deployment_fastapi.services.predictor import predictor
 
 router = APIRouter()
 

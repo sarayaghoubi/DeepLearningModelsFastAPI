@@ -1,6 +1,5 @@
 from pydantic import BaseModel
-from numpy import ndarray
-from typing import Optional,List
+from typing import List
 
 
 class InputDT(BaseModel):

@@ -1,13 +1,15 @@
 from starlette.config import Config
 from starlette.datastructures import Secret
-
+import os
+from dotenv import load_dotenv
+load_dotenv("../../.env")
 APP_VERSION = "0.0.1"
 APP_NAME = "Market Prediction Example"
 API_PREFIX = "/api"
 
-config = Config(".env")
+# config = Config()
 
-API_KEY: Secret = config("API_KEY", cast=Secret)
-IS_DEBUG: bool = config("IS_DEBUG", cast=bool, default=False)
+API_KEY: str = os.environ.get("API_KEY")
+IS_DEBUG: bool = os.environ.get("IS_DEBUG")
 
-DEFAULT_MODEL_PATH: str = config("DEFAULT_MODEL_PATH")
+DEFAULT_MODEL_PATH: str = os.environ.get("DEFAULT_MODEL_PATH")

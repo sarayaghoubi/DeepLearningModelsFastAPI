@@ -1,8 +1,8 @@
 import os.path as pth
 import torch
 from loguru import logger
-from model_deployment_fastapi.models import UNet
-from model_deployment_fastapi.models.ExchangeDtType import InputDT, Output
+from  DeepLearningModelsFastAPI.model_deployment_fastapi.models import UNet
+from DeepLearningModelsFastAPI.model_deployment_fastapi.models.ExchangeDtType import InputDT, Output
 import numpy as np
 
 class predictor(object):

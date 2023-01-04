@@ -1,7 +1,6 @@
 import torch
 
-from model_deployment_fastapi.models.bricks import *
-
+from DeepLearningModelsFastAPI.model_deployment_fastapi.models.bricks import *
 
 class UNet30(nn.Module):
     def __init__(self, n_channels:int, n_classes:int, bi_linear=False):

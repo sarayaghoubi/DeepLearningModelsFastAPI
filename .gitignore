@@ -13,3 +13,4 @@ model_deployment_fastapi/logs/
 
 # checkpoints
 /model_deployment_fastapi/checkpoints/
+/.env
