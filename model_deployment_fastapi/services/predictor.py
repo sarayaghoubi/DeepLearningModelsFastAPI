@@ -3,8 +3,7 @@ import torch
 from loguru import logger
 from  DeepLearningModelsFastAPI.model_deployment_fastapi.models import UNet
 from DeepLearningModelsFastAPI.model_deployment_fastapi.models.ExchangeDtType import InputDT, Output
-import numpy as np
-
+from pathlib import Path
 class predictor(object):
     def __init__(self, path):
         device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
@@ -14,10 +13,11 @@ class predictor(object):
         }
         self.nets['u'].to(device=device)
         self.nets['d'].to(device=device)
+        BASE_DIR = Path(__file__).resolve(strict=True).parent
         self.nets['u'].load_state_dict(
-            torch.load(pth.join(path, 'u.pth'), map_location=torch.device('cpu')))
+            torch.load(pth.join(BASE_DIR, path, 'u.pth'), map_location=torch.device('cpu')))
         self.nets['d'].load_state_dict(
-            torch.load(pth.join(path, 'd.pth'), map_location=torch.device('cpu')))
+            torch.load(pth.join(BASE_DIR, path, 'd.pth'), map_location=torch.device('cpu')))
         self.nets['u'].eval()
         self.nets['d'].eval()
         self.device = device
