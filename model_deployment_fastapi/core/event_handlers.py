@@ -1,7 +1,6 @@
 from typing import Callable
 from fastapi import FastAPI
 from loguru import logger
-from DeepLearningModelsFastAPI.model_deployment_fastapi.core.config import DEFAULT_MODEL_PATH
 from DeepLearningModelsFastAPI.model_deployment_fastapi.services.predictor import predictor
 
 

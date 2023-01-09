@@ -1,5 +1,3 @@
-from starlette.config import Config
-from starlette.datastructures import Secret
 import os
 from dotenv import load_dotenv
 load_dotenv("../../.env")
