@@ -1,10 +1,10 @@
 
 from fastapi import APIRouter
-from DeepLearningModelsFastAPI.model_deployment_fastapi.models.ExchangeDtType import InputDT
+from DeepLearningModelsFastAPI.model_deployment_fastapi.models.ExchangeDtType import status
 router = APIRouter()
 
 
-@router.get("/heartbeat", response_model=InputDT, name="heartbeat")
-def get_data() -> InputDT:
-    heartbeat = InputDT(is_alive=True)
-    return heartbeat
+@router.get("/status", response_model=status, name="heartbeat")
+def get_data() -> status:
+    st = status(condition='ok')
+    return st

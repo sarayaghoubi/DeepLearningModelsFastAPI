@@ -9,7 +9,7 @@ router = APIRouter()
 @router.post("/predict", response_model=Output, name="predict")
 def post_predict(
         request: Request,
-        block_data: InputDT = None
+        block_data: InputDT
 ) -> Output:
     model: Predictor = request.app.state.model
     prediction: Output = model.predict(block_data)

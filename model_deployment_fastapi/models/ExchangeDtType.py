@@ -9,3 +9,7 @@ class InputDT(BaseModel):
 class Output(BaseModel):
     bull: float
     bear: float
+
+
+class status(BaseModel):
+    condition: str
