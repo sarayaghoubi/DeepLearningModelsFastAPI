@@ -1,11 +1,11 @@
 from typing import Callable
 from fastapi import FastAPI
 from loguru import logger
-from DeepLearningModelsFastAPI.model_deployment_fastapi.services.predictor import predictor
+from DeepLearningModelsFastAPI.model_deployment_fastapi.services.predictor import Predictor
 
 
 def _startup_model(app: FastAPI) -> None:
-    model_instance = predictor()
+    model_instance = Predictor()
     app.state.model = model_instance
 
 
