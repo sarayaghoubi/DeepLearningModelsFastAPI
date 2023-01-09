@@ -5,7 +5,7 @@ from  DeepLearningModelsFastAPI.model_deployment_fastapi.models import UNet
 from DeepLearningModelsFastAPI.model_deployment_fastapi.models.ExchangeDtType import InputDT, Output
 from pathlib import Path
 class predictor(object):
-    def __init__(self, path):
+    def __init__(self):
         device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
         self.nets = {
             'u': UNet(n_channels=1, n_classes=1, bilinear=False),
@@ -15,9 +15,9 @@ class predictor(object):
         self.nets['d'].to(device=device)
         BASE_DIR = Path(__file__).resolve(strict=True).parent
         self.nets['u'].load_state_dict(
-            torch.load(pth.join(BASE_DIR, path, 'u.pth'), map_location=torch.device('cpu')))
+            torch.load(pth.join(BASE_DIR, 'u.pth'), map_location=torch.device('cpu')))
         self.nets['d'].load_state_dict(
-            torch.load(pth.join(BASE_DIR, path, 'd.pth'), map_location=torch.device('cpu')))
+            torch.load(pth.join(BASE_DIR, 'd.pth'), map_location=torch.device('cpu')))
         self.nets['u'].eval()
         self.nets['d'].eval()
         self.device = device

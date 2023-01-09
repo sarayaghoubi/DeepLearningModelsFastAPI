@@ -6,8 +6,7 @@ from DeepLearningModelsFastAPI.model_deployment_fastapi.services.predictor impor
 
 
 def _startup_model(app: FastAPI) -> None:
-    model_path = DEFAULT_MODEL_PATH
-    model_instance = predictor(model_path)
+    model_instance = predictor()
     app.state.model = model_instance
 
 
