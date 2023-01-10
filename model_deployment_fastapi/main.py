@@ -4,6 +4,7 @@ from api.routes.router import api_router
 from core.config import (API_PREFIX, APP_NAME, APP_VERSION, IS_DEBUG)
 from core.event_handlers import (start_app_handler, stop_app_handler)
 from loguru import logger
+import uvicorn
 
 
 def get_app() -> FastAPI:
@@ -18,3 +19,4 @@ def get_app() -> FastAPI:
 
 logger.add(pth('logs', 'logs.log'))
 app = get_app()
+uvicorn.run(app, host="0.0.0.0", port=8080)

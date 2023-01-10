@@ -12,6 +12,6 @@ def post_predict(
         block_data: InputDT
 ) -> Output:
     model: Predictor = request.app.state.model
-    prediction: Output = model.predict(block_data)
+    prediction: Output = model.predict(block_data.features)
 
     return prediction

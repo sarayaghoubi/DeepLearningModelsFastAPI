@@ -17,9 +17,10 @@ class Predictor(object):
         self.nets['d'].to(device=device)
         base_dir = Path(__file__).resolve(strict=True).parent
         self.nets['u'].load_state_dict(
-            torch.load(pth.join(base_dir, 'u.pth'), map_location=torch.device('cpu')))
+            torch.load(pth.join(base_dir, 'checkpoints', 'u.pth')
+                       , map_location=torch.device('cpu')))
         self.nets['d'].load_state_dict(
-            torch.load(pth.join(base_dir, 'd.pth'), map_location=torch.device('cpu')))
+            torch.load(pth.join(base_dir, 'checkpoints', 'd.pth'), map_location=torch.device('cpu')))
         self.nets['u'].eval()
         self.nets['d'].eval()
         self.device = device
