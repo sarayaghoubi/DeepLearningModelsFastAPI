@@ -6,7 +6,7 @@ import torch.nn.functional as functional
 class DoubleConv(nn.Module):
     """(convolution => [BN] => ReLU) * 2"""
 
-    def __init__(self, in_channels:int, out_channels:int, mid_channels=None, k=(4, 1)):
+    def __init__(self, in_channels: int, out_channels: int, mid_channels=None, k=(4, 1)):
         super().__init__()
         if not mid_channels:
             mid_channels = out_channels
@@ -26,7 +26,7 @@ class DoubleConv(nn.Module):
 class Down(nn.Module):
     """Downscaling with max pool then double conv"""
 
-    def __init__(self, in_channels:int, out_channels:int, k:(int,int)):
+    def __init__(self, in_channels: int, out_channels: int, k: (int, int)):
         super().__init__()
         self.maxpool_conv = nn.Sequential(
             # nn.MaxPool2d(2),
@@ -40,7 +40,7 @@ class Down(nn.Module):
 class Up(nn.Module):
     """Up scaling then double conv"""
 
-    def __init__(self, in_channels:int, out_channels:int, bi_linear=True, k=(2, 2)):
+    def __init__(self, in_channels: int, out_channels: int, bi_linear=True, k=(2, 2)):
         super().__init__()
 
         # if bi_linear, use the normal convolutions to reduce the number of channels
@@ -57,14 +57,14 @@ class Up(nn.Module):
         diffY = x2.size()[2] - x1.size()[2]
         diffX = x2.size()[3] - x1.size()[3]
 
-        x1 = functional.pad(x1, [diffX // 2, diffX - diffX // 2,diffY // 2, diffY - diffY // 2])
+        x1 = functional.pad(x1, [diffX // 2, diffX - diffX // 2, diffY // 2, diffY - diffY // 2])
         x = torch.cat([x2, x1], dim=1)
         return self.conv(x)
 
 
 class OutConv(nn.Module):
 
-    def __init__(self, in_channels:int, out_channels:int, k_size=(4, 2), nodes=1600):
+    def __init__(self, in_channels: int, out_channels: int, k_size=(4, 2), nodes=1600):
         super(OutConv, self).__init__()
         self.conv = nn.Sequential(
             nn.Conv2d(in_channels, out_channels, kernel_size=k_size),

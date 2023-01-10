@@ -11,5 +11,5 @@ class Output(BaseModel):
     bear: float
 
 
-class status(BaseModel):
+class Status(BaseModel):
     condition: str

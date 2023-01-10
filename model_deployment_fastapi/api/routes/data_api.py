@@ -1,10 +1,10 @@
 
 from fastapi import APIRouter
-from DeepLearningModelsFastAPI.model_deployment_fastapi.models.ExchangeDtType import status
+from DeepLearningModelsFastAPI.model_deployment_fastapi.models.ExchangeDtType import Status
 router = APIRouter()
 
 
-@router.get("/", response_model=status, name="heartbeat")
-def get_data() -> status:
-    st = status(condition='ok')
+@router.get("/alive")
+def get_data() -> Status:
+    st = Status(condition='connection is established')
     return st
